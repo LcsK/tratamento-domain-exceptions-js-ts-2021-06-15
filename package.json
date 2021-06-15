@@ -1,0 +1,28 @@
+{
+  "name": "tratamento-domain-exceptions-js-ts-2021-06-15",
+  "version": "1.0.0",
+  "description": "Rocketseat - ExpertsClub: Técnicas de tratamento de exceções de domínio em JavaScript com TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+	"engines": {
+    "node": "14.17.0",
+    "npm": "7.12.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LcsK/tratamento-domain-exceptions-js-ts-2021-06-15.git"
+  },
+  "keywords": [
+		"exceptions",
+    "error",
+    "handling",
+    "rocketseat"
+	],
+  "author": "Lucas Lopes (GitHub Public - LcsK) <lucasaferrlopes@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/LcsK/tratamento-domain-exceptions-js-ts-2021-06-15/issues"
+  },
+  "homepage": "https://github.com/LcsK/tratamento-domain-exceptions-js-ts-2021-06-15#readme"
+}
