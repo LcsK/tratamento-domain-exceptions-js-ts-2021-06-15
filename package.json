@@ -4,7 +4,9 @@
   "description": "Rocketseat - ExpertsClub: Técnicas de tratamento de exceções de domínio em JavaScript com TypeScript",
   "main": "index.js",
   "scripts": {
-		"compile": "tsc"
+    "compile": "tsc",
+		"start:local": "ts-node app.ts",
+		"start:watch": "nodemon"
   },
   "engines": {
     "node": "14.17.0",
@@ -27,6 +29,8 @@
   "homepage": "https://github.com/LcsK/tratamento-domain-exceptions-js-ts-2021-06-15#readme",
   "devDependencies": {
     "@types/node": "^15.12.2",
+    "nodemon": "^2.0.7",
+    "ts-node": "^10.0.0",
     "typescript": "^4.3.2"
   }
 }

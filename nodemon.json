@@ -1,0 +1,5 @@
+{
+    "watch": ["app.ts", "src"],
+    "ext": ".ts,.js",
+    "exec": "npm run start:local"
+}
