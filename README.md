@@ -29,14 +29,22 @@ Este projeto gira em torno da criação da entidade Person, que possui as seguin
 - Nickname: uma string não vazia
 - Age: um número inteiro e positivo
 
-### Repositório
+## Repositório
 
-Este repositório conta com duas branches:
+Este repositório conta com três branches:
 - main
 - boilerplate
+- final
 
 Caso você queira acompanhar a evolução do código durante a aula, a branch `boilerplate` dá a estrutura inicial para você poder começar.
-A branch `main` contém o projeto em sua versão final. Você pode acompanhar a evolução do projeto, em conformidade com os passos seguidos na aula, através do histórico de commits.
+
+A branch `main` contém o projeto em sua versão final em conformidade ao que foi mostrado no vídeo. Você pode acompanhar a evolução do projeto, em conformidade com os passos seguidos na aula, através do histórico de commits.
+
+A branch `final` possui alguns incrementos nos arquivos:
+- src/Nickname.ts
+- src/Person.ts
+- app.ts
+Com a intenção de demonstrar as validações replicada nas demais funções
 
 
 ## Dependências
