@@ -1,6 +1,6 @@
-export const createAge = (ageValue: number): number => {
+export const createAge = (ageValue: number): number | null => {
 	if (ageValue < 0 || !Number.isInteger(ageValue)) {
-		throw new TypeError('InvalidAge');
+		return null;
 	}
 
 	return ageValue;

@@ -11,17 +11,12 @@ export interface Person {
 	nickname: string;
 }
 
-export const createPerson = (personValues: PersonValues): Person => {
+export const createPerson = (personValues: PersonValues): Person | null => {
 	const { age: ageValue, nickname: nicknameValue } = personValues;
 
-	let age;
-	try {
-		age = createAge(ageValue);
-	} catch (error) {
-		console.log(error.name);
-		console.log(error.message);
-		console.log(error.stack);
-		throw error;
+	const age = createAge(ageValue);
+	if (age === null) {
+		return null;
 	}
 
 	const nickname = createNickname(nicknameValue);
