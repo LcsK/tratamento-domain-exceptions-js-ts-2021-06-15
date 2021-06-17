@@ -1,4 +1,5 @@
 import { createAge } from "./Age";
+import { DomainError } from "./DomainError";
 import { createNickname } from "./Nickname";
 
 export interface PersonValues {
@@ -11,18 +12,18 @@ export interface Person {
 	nickname: string;
 }
 
-export const createPerson = (personValues: PersonValues): Person | null => {
+export const createPerson = (personValues: PersonValues): Person | DomainError => {
 	const { age: ageValue, nickname: nicknameValue } = personValues;
 
 	const age = createAge(ageValue);
-	if (age === null) {
-		return null;
+	if (typeof age !== 'number' && (age as DomainError).name === 'InvalidAge') {
+		return age;
 	}
 
 	const nickname = createNickname(nicknameValue);
 
 	return {
-		age,
+		age: age as number,
 		nickname,
 	};
 };
