@@ -1,21 +1,34 @@
 import { Either, createFailureResult, createSuccessResult } from "./DomainResult";
 import { DomainError } from "./DomainError";
 
-export interface InvalidAge extends DomainError {
-	name: 'InvalidAge';
+export interface NegativeAge extends DomainError {
+	name: 'NegativeAge';
 }
 
-const createInvalidAge = (ageValue: number): InvalidAge => ({
-	name: 'InvalidAge',
-	message: `Idade deve ser um número positivo e inteiro. Recebeu: ${ageValue}`,
+export interface NonIntegerAge extends DomainError {
+	name: 'NonIntegerAge';
+}
+
+const createNegativeAge = (ageValue: number): NegativeAge => ({
+	name: 'NegativeAge',
+	message: `Idade deve ser um número positivo. Recebeu: ${ageValue}`,
 });
 
-export const createAge = (ageValue: number): Either<number, InvalidAge> => {
-	if (ageValue < 0 || !Number.isInteger(ageValue)) {
-		return createFailureResult<number, InvalidAge>(
-			createInvalidAge(ageValue)
+const createNonIntegerAge = (ageValue: number): NonIntegerAge => ({
+	name: 'NonIntegerAge',
+	message: `Idade deve ser um número inteiro. Recebeu: ${ageValue}`,
+});
+
+export const createAge = (ageValue: number): Either<number, NegativeAge | NonIntegerAge> => {
+	if (ageValue < 0) {
+		return createFailureResult<number, NegativeAge>(
+			createNegativeAge(ageValue)
+		);
+	} else if (!Number.isInteger(ageValue)) {
+		return createFailureResult<number, NonIntegerAge>(
+			createNonIntegerAge(ageValue)
 		);
 	}
 
-	return createSuccessResult<number, InvalidAge>(ageValue);
+	return createSuccessResult<number, NegativeAge | NonIntegerAge>(ageValue);
 }

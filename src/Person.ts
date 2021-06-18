@@ -1,4 +1,4 @@
-import { createAge, InvalidAge } from "./Age";
+import { createAge, NegativeAge, NonIntegerAge } from "./Age";
 import { createNickname } from "./Nickname";
 
 export interface PersonValues {
@@ -11,7 +11,7 @@ export interface Person {
 	nickname: string;
 }
 
-export const createPerson = (personValues: PersonValues): Person | InvalidAge => {
+export const createPerson = (personValues: PersonValues): Person | NegativeAge | NonIntegerAge => {
 	const { age: ageValue, nickname: nicknameValue } = personValues;
 
 	const ageResult = createAge(ageValue);
