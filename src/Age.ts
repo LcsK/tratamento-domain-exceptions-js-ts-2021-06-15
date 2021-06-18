@@ -1,7 +1,7 @@
 import { Either, createFailureResult, createSuccessResult } from "./DomainResult";
 import { DomainError } from "./DomainError";
 
-type InvalidAgeStates = NegativeAge | NonIntegerAge;
+export type InvalidAgeStates = NegativeAge | NonIntegerAge;
 
 export interface NegativeAge extends DomainError {
 	name: 'NegativeAge';
