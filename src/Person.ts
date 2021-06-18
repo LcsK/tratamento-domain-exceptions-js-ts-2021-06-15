@@ -14,15 +14,15 @@ export interface Person {
 export const createPerson = (personValues: PersonValues): Person | InvalidAge => {
 	const { age: ageValue, nickname: nicknameValue } = personValues;
 
-	const age = createAge(ageValue);
-	if (typeof age !== 'number' && (age as InvalidAge).name === 'InvalidAge') {
-		return age;
+	const ageResult = createAge(ageValue);
+	if (ageResult.isFailure()) {
+		throw ''; // tratar o erro aqui
 	}
 
 	const nickname = createNickname(nicknameValue);
 
 	return {
-		age: age as number,
+		age: ageResult.value as number,
 		nickname,
 	};
 };
